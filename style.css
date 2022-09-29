@@ -27,7 +27,7 @@ body{
 
 .container .card{
     position: relative;
-    width: 900px;
+    width: 300px;
     height: 400px;
     background: rgb(30,30,30);
     display: flex;
