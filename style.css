@@ -1,220 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Jura', sans-serif;
-
+body {
+    background-image: url('tilebackground.png');
+    background-repeat: repeat;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(7,7,7);
-    min-height: 100vh;
-}
-
-.container{
-    width: 1100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.container .card{
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: rgb(30,30,30);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 35px;
-    overflow: hidden;
-}
-
-.container:hover .card{
-    opacity: 0.2;
-}
-.container .card:hover{
-    opacity: 1;
-}
-
-.container .card::before{
-
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 400px;
-    bottom: 2px;
-    width: 50%;
-    background: rgb(30,30,30);
-    pointer-events: none;
-}
-
-.container .card .content{
-
-    padding: 30px;
+.header {
     text-align: center;
 }
 
-.container .card .content h2{
-    position: absolute;
-    right: 30px;
-    font-size: 4em;
-    font-weight: 800;
-    color: violet;
+h1 {
+    color: white;
+}
+
+li {
+    color: white;
+    font-size: 25px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* added */
+    top: 50%; /* added */
+    left: 50%; /* added */
+    transform: translate(-50%, -50%); /* added */
+    max-width: 800px;
+    margin: 0 auto;
+
+    
+}
+
+.about-me-title {
+    text-align: left;
+}
+
+.line {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 100%;
+    margin: 10px 0;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    margin-right: 80px; /* increased */
+    text-align: center; /* added */
+    margin: 0 auto; /* added */
+}
+
+.about-me {
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    margin-left: 60px; /* added */
+    padding: 10px; /* added */
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
     z-index: 1;
-    opacity: 0.1;
-    transition: 0.5s;
 }
 
-.container .card:hover .content h2{
-    opacity: 1;
-    transform: translateY(-70px);
-}
-
-.container .card .content h3{
-    position: relative;
-
-    font-size: 4em;
-    font-weight: 800;
-    color: rgb(235, 235, 235);
-    z-index: 2;
-    opacity: 0.5;
-    letter-spacing: 1px;
-    transition: 0.5s;
-}
-
-
-.container .card .content p{
-    position: relative;
-    font-size: 1em;
-    color: rgb(235, 235, 235);
-    z-index: 2;
-    opacity: 0.5;
-    letter-spacing: 1px;
-    transition: 0.5s;
-}
-
-
-.container .card:hover .content h3,
-.container .card:hover .content p{
-    opacity: 1;
-}
-
-.container .card .content a:checked {
-    background: rgb(235, 235, 235);
-}
-
-.container .card .content a{
-    display: inline-block;
-    margin-top: 15px;
-    padding: 8px 15px;
-    background: blueviolet;
-    color: rgb(17, 17, 17);
+a {
+    color: white;
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
+    margin-right: 10px;
 }
 
-.container .card span{
-    transition: 0.5s;
-    opacity: 0;
-}
 
-.container .card:hover span{
-    opacity: 1;
-}
+.post {
+    z-index: 0;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+  
 
-.container .card span:nth-child(1){
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, transparent, violet);
-    animation: animate1 2s linear infinite;
+    margin-top: 175px;
+
+    display: block;
+  
 }
 
-@keyframes animate1
-{
-    0%
-    {
-        transform: translateX(-100%);
-    }
-    100%
-    {
-        transform: translateX(100%);
-    }
+.post-title {
+    text-align: center;
 }
 
-.container .card span:nth-child(2){
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, blueviolet);
-    animation: animate2 2s linear infinite;
+.post-meta {
+    font-size: 0.8em;
+    text-align: center;
 }
 
-@keyframes animate2
-{
-    0%
-    {
-        transform: translateY(-100%);
-    }
-    100%
-    {
-        transform: translateY(100%);
-    }
+.post-content {
+    padding: 20px;
 }
 
-.container .card span:nth-child(3){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to left, transparent, blueviolet);
-    animation: animate3 2s linear infinite;
+p {
+    margin-bottom: 20px; /* add 20px of margin space at the bottom of each paragraph */
+    
 }
 
-@keyframes animate3
-{
-    0%
-    {
-        transform: translateX(100%);
-    }
-    100%
-    {
-        transform: translateX(-100%);
-    }
-}
+img{
+    margin-top: 20px;
 
-.container .card span:nth-child(4){
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to top, transparent, blueviolet);
-    animation: animate4 2s linear infinite;
-}
-
-@keyframes animate4
-{
-    0%
-    {
-        transform: translateY(100%);
-    }
-    100%
-    {
-        transform: translateY(-100%);
-    }
-}
+    max-width: 500px;
+    height: auto;
+  }
